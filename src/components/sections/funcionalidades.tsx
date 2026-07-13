@@ -4,6 +4,7 @@ import * as React from "react"
 import Image from "next/image"
 
 import { cn } from "@/lib/utils"
+import { basePath } from "@/lib/base-path"
 
 const tabs = [
     {
@@ -96,7 +97,7 @@ export function Funcionalidades() {
                     <div className="lg:-mr-16 xl:-mr-32">
                         <div className="relative aspect-video overflow-hidden rounded-xl border bg-muted shadow-xl">
                             <Image
-                                src={current.img}
+                                src={`${basePath}${current.img}`}
                                 alt={current.alt}
                                 fill
                                 unoptimized

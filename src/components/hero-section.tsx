@@ -3,6 +3,7 @@
 import Image from "next/image"
 
 import { cn } from "@/lib/utils"
+import { basePath } from "@/lib/base-path"
 import { Button } from "@/components/ui/button"
 
 export const HeroSection = () => {
@@ -58,7 +59,7 @@ export const HeroSection = () => {
                         <div className="relative h-[19rem] overflow-hidden rounded-t-xl border border-b-0 border-white/15 shadow-2xl shadow-zinc-950/40 ring-1 ring-black/5 lg:h-[23rem]">
                             <Image
                                 className="object-cover object-top"
-                                src="/screens/dashboard.jpg"
+                                src={`${basePath}/screens/dashboard.jpg`}
                                 alt="Dashboard do ICO System com indicadores de eventos, inconsistências e custos"
                                 fill
                                 sizes="(max-width: 1024px) 100vw, 1024px"
@@ -120,7 +121,7 @@ export function HeroBackground() {
 export const Logo = ({ className }: { className?: string }) => {
     return (
         <Image
-            src="/logo.png"
+            src={`${basePath}/logo.png`}
             alt="ICO System"
             width={128}
             height={31}
