@@ -95,18 +95,20 @@ export function Funcionalidades() {
                     })}
                 </div>
 
+                {/* Barra de progresso, logo abaixo das tabs */}
+                <div className="mx-auto mt-6 h-1 w-full max-w-md overflow-hidden rounded-full bg-primary/15">
+                    <div
+                        key={active}
+                        className="bg-primary h-full rounded-full"
+                        style={{ animation: `ico-progress ${TAB_DURATION}ms linear forwards` }}
+                    />
+                </div>
+
                 {/* Conteúdo da aba */}
                 <div
                     key={active}
-                    className="mt-16 grid items-start gap-10 duration-500 animate-in fade-in-50 slide-in-from-bottom-2 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+                    className="mt-14 grid items-start gap-10 duration-500 animate-in fade-in-50 slide-in-from-bottom-2 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
                     <div>
-                        <div className="mb-8 h-1 w-full max-w-xs overflow-hidden rounded-full bg-primary/15">
-                            <div
-                                key={active}
-                                className="bg-primary h-full rounded-full"
-                                style={{ animation: `ico-progress ${TAB_DURATION}ms linear forwards` }}
-                            />
-                        </div>
                         <h3 className="text-primary text-2xl font-semibold text-balance">{current.title}</h3>
                         <p className="text-muted-foreground mt-4 leading-relaxed">{current.text}</p>
                     </div>
