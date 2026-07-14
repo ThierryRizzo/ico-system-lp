@@ -21,7 +21,9 @@ export const HeroSection = () => {
                                 <Logo />
                             </a>
 
-                            <Button size="sm">
+                            <Button
+                                size="sm"
+                                onClick={() => document.getElementById("lista")?.scrollIntoView({ behavior: "smooth" })}>
                                 <span>Entrar na lista</span>
                             </Button>
                         </div>
@@ -45,7 +47,13 @@ export const HeroSection = () => {
                             </p>
 
                             <form
-                                onSubmit={(e) => e.preventDefault()}
+                                onSubmit={(e) => {
+                                    e.preventDefault()
+                                    const email = (e.currentTarget.querySelector("input[type=email]") as HTMLInputElement | null)?.value ?? ""
+                                    const listaEmail = document.getElementById("lista-email") as HTMLInputElement | null
+                                    if (listaEmail) listaEmail.value = email
+                                    document.getElementById("lista")?.scrollIntoView({ behavior: "smooth" })
+                                }}
                                 className="mx-auto flex w-full max-w-md flex-col gap-3 sm:flex-row">
                                 <input
                                     type="email"
@@ -86,7 +94,7 @@ export const HeroSection = () => {
                             Você não abriu um laboratório para caçar frasco perdido nem justificar desperdício.
                         </h2>
                         <p className="mx-auto mt-4 max-w-2xl text-balance text-white/70">
-                            No fim do mês, o que pesa não é só o insumo que vazou — é a sensação de não ter controle. O ICO System devolve isso: menos gasto, menos retrabalho e a tranquilidade de saber que está tudo registrado.
+                            No fim do mês, o que pesa não é só o insumo que vazou. É a sensação de não ter controle. O ICO System devolve isso: menos gasto, menos retrabalho e a tranquilidade de saber que está tudo registrado.
                         </p>
                     </div>
                     <div className="mx-auto mt-12 grid max-w-4xl gap-6 px-6 sm:grid-cols-3">

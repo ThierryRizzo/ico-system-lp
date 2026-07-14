@@ -41,6 +41,7 @@ export function ListaEspera() {
                         </Field>
                         <Field label="E-mail">
                             <input
+                                id="lista-email"
                                 type="email"
                                 required
                                 placeholder="voce@laboratorio.com"
