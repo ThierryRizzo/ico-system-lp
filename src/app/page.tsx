@@ -4,6 +4,7 @@ import { AntesDepois } from "@/components/sections/antes-depois"
 import { Beneficios } from "@/components/sections/beneficios"
 import { ComoFunciona } from "@/components/sections/como-funciona"
 import { Funcionalidades } from "@/components/sections/funcionalidades"
+import { ListaEspera } from "@/components/sections/lista-espera"
 import { Faq } from "@/components/sections/faq"
 import { SiteFooter } from "@/components/sections/site-footer"
 
@@ -16,6 +17,7 @@ export default function Home() {
       <Beneficios />
       <ComoFunciona />
       <Funcionalidades />
+      <ListaEspera />
       <Faq />
       <SiteFooter />
     </>
