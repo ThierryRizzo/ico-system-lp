@@ -42,9 +42,20 @@ const tabs = [
     },
 ]
 
+const TAB_DURATION = 6000
+
 export function Funcionalidades() {
     const [active, setActive] = React.useState(tabs[0].id)
     const current = tabs.find((t) => t.id === active) ?? tabs[0]
+
+    // Avança automaticamente para a próxima tab quando a barra completa.
+    React.useEffect(() => {
+        const timer = setTimeout(() => {
+            const idx = tabs.findIndex((t) => t.id === active)
+            setActive(tabs[(idx + 1) % tabs.length].id)
+        }, TAB_DURATION)
+        return () => clearTimeout(timer)
+    }, [active])
 
     return (
         <section
@@ -89,6 +100,13 @@ export function Funcionalidades() {
                     key={active}
                     className="mt-16 grid items-start gap-10 duration-500 animate-in fade-in-50 slide-in-from-bottom-2 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
                     <div>
+                        <div className="mb-8 h-1 w-full max-w-xs overflow-hidden rounded-full bg-primary/15">
+                            <div
+                                key={active}
+                                className="bg-primary h-full rounded-full"
+                                style={{ animation: `ico-progress ${TAB_DURATION}ms linear forwards` }}
+                            />
+                        </div>
                         <h3 className="text-primary text-2xl font-semibold text-balance">{current.title}</h3>
                         <p className="text-muted-foreground mt-4 leading-relaxed">{current.text}</p>
                     </div>

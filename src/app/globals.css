@@ -169,3 +169,13 @@
     transform: translate(10%, -12%) scale(1.1);
   }
 }
+
+/* Barra de progresso das tabs (auto-avanço) */
+@keyframes ico-progress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
