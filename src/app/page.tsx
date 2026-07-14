@@ -1,5 +1,6 @@
 import { HeroSection } from "@/components/hero-section"
 import { Problema } from "@/components/sections/problema"
+import { AntesDepois } from "@/components/sections/antes-depois"
 import { Beneficios } from "@/components/sections/beneficios"
 import { ComoFunciona } from "@/components/sections/como-funciona"
 import { Funcionalidades } from "@/components/sections/funcionalidades"
@@ -11,6 +12,7 @@ export default function Home() {
     <>
       <HeroSection />
       <Problema />
+      <AntesDepois />
       <Beneficios />
       <ComoFunciona />
       <Funcionalidades />

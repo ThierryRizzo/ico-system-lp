@@ -15,11 +15,11 @@ const perguntas = [
     },
     {
         q: "Serve pro meu tipo de laboratório?",
-        a: "O ICO System foi desenhado para a rotina de laboratórios de anatomia patológica, imuno-histoquímica e diagnóstico, dos anticorpos aos autostainers.",
+        a: "Foi desenhado para laboratórios e centros de diagnóstico que precisam controlar reagentes, insumos e equipamentos, seja qual for a especialidade.",
     },
     {
         q: "Quanto custa?",
-        a: "Comece de graça no teste e conheça o sistema com seus próprios dados. O plano é definido depois, de acordo com o tamanho do seu laboratório.",
+        a: "Estamos em fase de lançamento. Quem entra agora na lista de espera garante 70% de desconto quando o sistema abrir. O plano é definido depois, de acordo com o tamanho do laboratório.",
     },
 ]
 

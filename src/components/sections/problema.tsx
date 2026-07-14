@@ -3,7 +3,7 @@ import { FlaskConical, PackageOpen, TrendingDown, HelpCircle } from "lucide-reac
 const furos = [
     {
         icon: FlaskConical,
-        text: "Um frasco de anticorpo abre e ninguém anota.",
+        text: "Um frasco de reagente abre e ninguém anota.",
     },
     {
         icon: PackageOpen,

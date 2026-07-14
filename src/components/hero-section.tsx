@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import { Sparkles, TrendingDown, Droplets, Feather } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { basePath } from "@/lib/base-path"
@@ -21,7 +22,7 @@ export const HeroSection = () => {
                             </a>
 
                             <Button size="sm">
-                                <span>Começar teste grátis</span>
+                                <span>Entrar na lista</span>
                             </Button>
                         </div>
                     </div>
@@ -33,25 +34,34 @@ export const HeroSection = () => {
                     <HeroBackground />
                     <div className="relative z-10 mx-auto max-w-5xl px-6 pt-16 pb-10 lg:pt-20 lg:pb-12">
                         <div className="relative z-10 mx-auto max-w-2xl text-center">
+                            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-sm font-medium backdrop-blur">
+                                <Sparkles className="size-4 text-blue-200" />
+                                Lista de espera aberta · 70% de desconto de lançamento
+                            </div>
+
                             <h1 className="text-balance text-4xl font-semibold md:text-5xl lg:text-6xl">Cada gota conta. Nenhuma se perde.</h1>
                             <p className="mx-auto my-8 max-w-2xl text-lg text-balance text-white/80">
-                                Rastreie cada reagente e equipamento em um histórico que ninguém pode alterar. Você sabe onde está, quem pegou e quanto se gastou.
+                                Rastreie cada reagente, insumo e equipamento em um histórico que ninguém pode alterar. 100% online, sem nada para instalar.
                             </p>
 
-                            <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
+                            <form
+                                onSubmit={(e) => e.preventDefault()}
+                                className="mx-auto flex w-full max-w-md flex-col gap-3 sm:flex-row">
+                                <input
+                                    type="email"
+                                    required
+                                    placeholder="Seu melhor e-mail"
+                                    aria-label="E-mail"
+                                    className="h-11 flex-1 rounded-lg border border-white/25 bg-white/10 px-4 text-white outline-none placeholder:text-white/60 focus:border-white/60 focus:bg-white/15"
+                                />
                                 <Button
+                                    type="submit"
                                     size="lg"
-                                    className="bg-white text-primary hover:bg-white/90">
-                                    <span>Começar teste grátis</span>
+                                    className="h-11 bg-white px-6 text-primary hover:bg-white/90">
+                                    <span>Entrar na lista</span>
                                 </Button>
-                                <Button
-                                    size="lg"
-                                    variant="outline"
-                                    className="border-white/40 bg-transparent text-white hover:bg-white/10 hover:text-white">
-                                    <span>Agendar demonstração</span>
-                                </Button>
-                            </div>
-                            <p className="mt-4 text-sm text-white/70">Sem cartão de crédito e sem instalar nada.</p>
+                            </form>
+                            <p className="mt-3 text-sm text-white/70">Vagas limitadas · Sem cartão de crédito · Cancele quando quiser</p>
                         </div>
                     </div>
 
@@ -70,11 +80,37 @@ export const HeroSection = () => {
                     </div>
                 </section>
 
-                <section className="relative z-10 bg-[#0a1a5c] py-8">
-                    <div className="m-auto max-w-5xl px-6">
-                        <h2 className="text-center text-lg font-medium text-balance text-white/75">
-                            Feito para a rotina de laboratórios de anatomia patológica, imuno-histoquímica e diagnóstico.
+                <section className="relative z-10 bg-[#0a1a5c] pb-20 pt-14 text-white">
+                    <div className="mx-auto max-w-3xl px-6 text-center">
+                        <h2 className="text-balance text-2xl font-semibold md:text-3xl">
+                            Você não abriu um laboratório para caçar frasco perdido nem justificar desperdício.
                         </h2>
+                        <p className="mx-auto mt-4 max-w-2xl text-balance text-white/70">
+                            No fim do mês, o que pesa não é só o insumo que vazou — é a sensação de não ter controle. O ICO System devolve isso: menos gasto, menos retrabalho e a tranquilidade de saber que está tudo registrado.
+                        </p>
+                    </div>
+                    <div className="mx-auto mt-12 grid max-w-4xl gap-6 px-6 sm:grid-cols-3">
+                        <div className="rounded-2xl border border-white/10 bg-white/5 p-6 text-left">
+                            <div className="flex size-11 items-center justify-center rounded-xl bg-blue-500/15 text-blue-300">
+                                <TrendingDown className="size-5" />
+                            </div>
+                            <h3 className="mt-5 font-semibold">Menos custo</h3>
+                            <p className="mt-2 text-sm leading-relaxed text-white/65">Ver para onde vai cada real gasto em insumo e equipamento é o primeiro passo para gastar menos.</p>
+                        </div>
+                        <div className="rounded-2xl border border-white/10 bg-white/5 p-6 text-left">
+                            <div className="flex size-11 items-center justify-center rounded-xl bg-blue-500/15 text-blue-300">
+                                <Droplets className="size-5" />
+                            </div>
+                            <h3 className="mt-5 font-semibold">Zero desperdício invisível</h3>
+                            <p className="mt-2 text-sm leading-relaxed text-white/65">O que sai além do previsto aparece na tela, com motivo. O desperdício deixa de passar despercebido.</p>
+                        </div>
+                        <div className="rounded-2xl border border-white/10 bg-white/5 p-6 text-left">
+                            <div className="flex size-11 items-center justify-center rounded-xl bg-blue-500/15 text-blue-300">
+                                <Feather className="size-5" />
+                            </div>
+                            <h3 className="mt-5 font-semibold">Fim da desorganização</h3>
+                            <p className="mt-2 text-sm leading-relaxed text-white/65">Sem planilha bagunçada nem &ldquo;quem pegou isso?&rdquo;. Tudo num lugar só, sempre atualizado.</p>
+                        </div>
                     </div>
                 </section>
             </main>
