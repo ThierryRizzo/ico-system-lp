@@ -1,7 +1,5 @@
 import { X, ScanLine, ClipboardCheck, History, QrCode } from "lucide-react"
 
-import { SectionAura } from "@/components/section-aura"
-
 const antes = [
     "Planilha que qualquer um edita (ou apaga sem querer)",
     "Dez campos para preencher na mão, toda vez",
@@ -29,9 +27,8 @@ const depois = [
 
 export function AntesDepois() {
     return (
-        <section className="relative overflow-hidden border-t">
-            <SectionAura />
-            <div className="relative z-10 mx-auto max-w-5xl px-6 py-24">
+        <section className="border-t">
+            <div className="mx-auto max-w-5xl px-6 py-24">
                 <div className="mx-auto max-w-2xl text-center">
                     <h2 className="text-balance text-3xl font-semibold md:text-4xl">
                         Da planilha bagunçada ao QR Code.

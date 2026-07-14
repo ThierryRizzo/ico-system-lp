@@ -5,7 +5,6 @@ import Image from "next/image"
 
 import { cn } from "@/lib/utils"
 import { basePath } from "@/lib/base-path"
-import { SectionAura } from "@/components/section-aura"
 
 const tabs = [
     {
@@ -49,9 +48,8 @@ export function Funcionalidades() {
     return (
         <section
             id="recursos"
-            className="relative overflow-hidden">
-            <SectionAura />
-            <div className="relative z-10 mx-auto max-w-6xl px-6 py-24">
+            className="overflow-hidden">
+            <div className="mx-auto max-w-6xl px-6 py-24">
                 <div className="mx-auto max-w-2xl text-center">
                     <h2 className="text-balance text-3xl font-semibold md:text-4xl">
                         O que você controla no ICO System.
