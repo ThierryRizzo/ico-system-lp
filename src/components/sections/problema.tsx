@@ -1,5 +1,7 @@
 import { FlaskConical, PackageOpen, TrendingDown, HelpCircle } from "lucide-react"
 
+import { SectionAura } from "@/components/section-aura"
+
 const furos = [
     {
         icon: FlaskConical,
@@ -21,8 +23,9 @@ const furos = [
 
 export function Problema() {
     return (
-        <section className="border-t bg-muted/30">
-            <div className="mx-auto max-w-5xl px-6 py-24">
+        <section className="relative overflow-hidden border-t">
+            <SectionAura />
+            <div className="relative z-10 mx-auto max-w-5xl px-6 py-24">
                 <div className="mx-auto max-w-2xl text-center">
                     <h2 className="text-balance text-3xl font-semibold md:text-4xl">
                         No papel e na planilha, o histórico do laboratório sempre tem um furo.
@@ -33,7 +36,7 @@ export function Problema() {
                     {furos.map((f) => (
                         <div
                             key={f.text}
-                            className="flex items-start gap-4 rounded-2xl border bg-card p-5">
+                            className="flex items-start gap-4 rounded-2xl border bg-card p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-red-200 hover:shadow-lg hover:shadow-red-500/5">
                             <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-red-500/10 text-red-600">
                                 <f.icon className="size-5" />
                             </div>

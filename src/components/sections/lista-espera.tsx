@@ -1,6 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
+import { SectionAura } from "@/components/section-aura"
 
 const areas = [
     "Laboratório clínico / análises",
@@ -15,8 +16,9 @@ export function ListaEspera() {
     return (
         <section
             id="lista"
-            className="border-t bg-muted/30">
-            <div className="mx-auto max-w-xl px-6 py-24">
+            className="relative overflow-hidden border-t">
+            <SectionAura />
+            <div className="relative z-10 mx-auto max-w-xl px-6 py-24">
                 <div className="rounded-2xl border bg-card p-6 shadow-lg sm:p-8">
                     <div className="text-center">
                         <h2 className="text-balance text-2xl font-semibold md:text-3xl">
