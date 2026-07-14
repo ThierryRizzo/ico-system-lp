@@ -1,5 +1,3 @@
-import { SectionAura } from "@/components/section-aura"
-
 const passos = [
     {
         n: "1",
@@ -27,9 +25,8 @@ export function ComoFunciona() {
     return (
         <section
             id="como-funciona"
-            className="relative overflow-hidden border-t">
-            <SectionAura />
-            <div className="relative z-10 mx-auto max-w-5xl px-6 py-24">
+            className="border-t">
+            <div className="mx-auto max-w-5xl px-6 py-24">
                 <div className="mx-auto max-w-2xl text-center">
                     <h2 className="text-balance text-3xl font-semibold md:text-4xl">
                         Rastreabilidade começa com um QR Code.

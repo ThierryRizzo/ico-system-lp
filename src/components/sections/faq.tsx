@@ -27,13 +27,13 @@ export function Faq() {
     return (
         <section
             id="precos"
-            className="border-t bg-[#0a1a5c] text-white">
+            className="border-t">
             <div className="mx-auto max-w-3xl px-6 py-24">
                 <div className="mx-auto max-w-2xl text-center">
                     <h2 className="text-balance text-3xl font-semibold md:text-4xl">Perguntas frequentes</h2>
                 </div>
 
-                <div className="mt-12 divide-y rounded-2xl border bg-card text-foreground shadow-xl shadow-zinc-950/20">
+                <div className="mt-12 divide-y rounded-2xl border bg-card text-foreground shadow-sm">
                     {perguntas.map((p) => (
                         <details
                             key={p.q}
