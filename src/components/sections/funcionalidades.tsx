@@ -69,50 +69,55 @@ export function Funcionalidades() {
                     </h2>
                 </div>
 
-                {/* Tabs */}
-                <div
-                    role="tablist"
-                    aria-label="Áreas do ICO System"
-                    className="mt-24 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
-                    {tabs.map((t) => {
-                        const selected = t.id === active
-                        return (
-                            <button
-                                key={t.id}
-                                type="button"
-                                role="tab"
-                                aria-selected={selected}
-                                onClick={() => setActive(t.id)}
-                                className={cn(
-                                    "cursor-pointer rounded-full border px-5 py-2.5 text-sm font-medium transition-all duration-200",
-                                    selected
-                                        ? "border-primary bg-primary text-primary-foreground shadow-md shadow-primary/25"
-                                        : "border-border bg-card text-muted-foreground hover:border-primary/40 hover:text-foreground"
-                                )}>
-                                {t.label}
-                            </button>
-                        )
-                    })}
-                </div>
+                <div className="mt-16 grid items-start gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+                    <div>
+                        {/* Tabs em cima do título e descrição */}
+                        <div
+                            role="tablist"
+                            aria-label="Áreas do ICO System"
+                            className="flex flex-wrap items-center gap-2">
+                            {tabs.map((t) => {
+                                const selected = t.id === active
+                                return (
+                                    <button
+                                        key={t.id}
+                                        type="button"
+                                        role="tab"
+                                        aria-selected={selected}
+                                        onClick={() => setActive(t.id)}
+                                        className={cn(
+                                            "cursor-pointer rounded-full border px-4 py-2 text-sm font-medium transition-all duration-200",
+                                            selected
+                                                ? "border-primary bg-primary text-primary-foreground shadow-md shadow-primary/25"
+                                                : "border-border bg-card text-muted-foreground hover:border-primary/40 hover:text-foreground"
+                                        )}>
+                                        {t.label}
+                                    </button>
+                                )
+                            })}
+                        </div>
 
-                {/* Barra de progresso, logo abaixo das tabs */}
-                <div className="mx-auto mt-6 h-1 w-full max-w-md overflow-hidden rounded-full bg-primary/15">
+                        {/* Barra de progresso, logo abaixo das tabs */}
+                        <div className="mt-6 h-1 w-full max-w-sm overflow-hidden rounded-full bg-primary/15">
+                            <div
+                                key={active}
+                                className="bg-primary h-full rounded-full"
+                                style={{ animation: `ico-progress ${TAB_DURATION}ms linear forwards` }}
+                            />
+                        </div>
+
+                        {/* Título + descrição */}
+                        <div
+                            key={active}
+                            className="mt-8 duration-500 animate-in fade-in-50 slide-in-from-bottom-2">
+                            <h3 className="text-primary text-2xl font-semibold text-balance">{current.title}</h3>
+                            <p className="text-muted-foreground mt-4 leading-relaxed">{current.text}</p>
+                        </div>
+                    </div>
+
                     <div
                         key={active}
-                        className="bg-primary h-full rounded-full"
-                        style={{ animation: `ico-progress ${TAB_DURATION}ms linear forwards` }}
-                    />
-                </div>
-
-                {/* Conteúdo da aba */}
-                <div
-                    key={active}
-                    className="mt-14 grid items-start gap-10 duration-500 animate-in fade-in-50 slide-in-from-bottom-2 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-                    <div>
-                        <h3 className="text-primary text-2xl font-semibold text-balance">{current.title}</h3>
-                        <p className="text-muted-foreground mt-4 leading-relaxed">{current.text}</p>
-                    </div>
-                    <div className="lg:-mr-16 xl:-mr-32">
+                        className="duration-500 animate-in fade-in-50 slide-in-from-bottom-2 lg:-mr-16 xl:-mr-32">
                         <div className="relative aspect-video overflow-hidden rounded-xl border bg-muted shadow-xl">
                             <Image
                                 src={`${basePath}${current.img}`}
