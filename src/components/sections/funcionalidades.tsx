@@ -48,14 +48,10 @@ export function Funcionalidades() {
     return (
         <section
             id="recursos"
-            className="relative overflow-hidden">
-            <div
-                aria-hidden
-                className="pointer-events-none absolute left-1/2 top-0 z-0 aspect-square w-[2600px] -translate-x-1/2 -translate-y-[2410px] rounded-full bg-[#0a1a5c]"
-            />
-            <div className="relative z-10 mx-auto max-w-6xl px-6 pb-24 pt-24">
-                <div className="mx-auto max-w-2xl pt-2 text-center">
-                    <h2 className="text-balance text-3xl font-semibold text-white md:text-4xl">
+            className="overflow-hidden">
+            <div className="mx-auto max-w-6xl px-6 py-24">
+                <div className="mx-auto max-w-2xl text-center">
+                    <h2 className="text-balance text-3xl font-semibold md:text-4xl">
                         O que você controla no ICO System.
                     </h2>
                 </div>
