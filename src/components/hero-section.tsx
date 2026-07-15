@@ -1,18 +1,29 @@
 "use client"
 
 import Image from "next/image"
-import { Sparkles, TrendingDown, Droplets, Feather } from "lucide-react"
+import {
+    Sparkles,
+    TrendingDown,
+    Droplets,
+    Feather,
+    CircleCheck,
+    CreditCard,
+    CircleSlash,
+} from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { basePath } from "@/lib/base-path"
 import { Button } from "@/components/ui/button"
+
+// Azul-marinho chapado e escuro que serve de base para a hero
+const NAVY = "#08123f"
 
 export const HeroSection = () => {
     return (
         <div>
             <header>
                 <nav className="w-full border-b border-dashed bg-white backdrop-blur dark:bg-zinc-950/50">
-                    <div className="m-auto max-w-5xl px-6">
+                    <div className="m-auto max-w-6xl px-6">
                         <div className="flex items-center justify-between py-3 lg:py-4">
                             <a
                                 href="#"
@@ -41,63 +52,81 @@ export const HeroSection = () => {
             </header>
 
             <main>
-                <section className="relative isolate overflow-hidden bg-[#0a1a5c] text-white">
+                <section
+                    className="relative isolate overflow-hidden text-white"
+                    style={{ backgroundColor: NAVY }}>
                     <HeroBackground />
-                    <div className="relative z-10 mx-auto max-w-5xl px-6 pt-16 pb-10 lg:pt-20 lg:pb-12">
-                        <div className="relative z-10 mx-auto max-w-2xl text-center">
-                            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-sm font-medium backdrop-blur">
-                                <Sparkles className="size-4 text-blue-200" />
-                                Lista de espera aberta · 70% de desconto de lançamento
+                    <div className="relative z-10 mx-auto max-w-6xl px-6 pt-14 pb-16 lg:pt-20 lg:pb-24">
+                        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-10">
+                            {/* Coluna de texto */}
+                            <div className="max-w-xl text-center lg:text-left">
+                                <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-sm font-medium backdrop-blur">
+                                    <Sparkles className="size-4 text-blue-300" />
+                                    Lista de espera aberta · 70% de desconto de lançamento
+                                </div>
+
+                                <h1 className="text-balance text-4xl font-bold leading-[1.05] md:text-5xl lg:text-[3.4rem]">
+                                    Do controle de almoxarifado ao{" "}
+                                    <span className="text-[#4f8dff]">uso operacional</span> no laboratório
+                                </h1>
+
+                                <p className="mx-auto mt-6 max-w-xl text-lg text-balance text-white/75 lg:mx-0">
+                                    Cada gota conta. Acompanhe reagentes, insumos e equipamentos desde o recebimento
+                                    até o consumo, movimentação ou descarte, com{" "}
+                                    <span className="font-semibold text-white">histórico rastreável e acesso 100% online</span>.
+                                </p>
+
+                                <form
+                                    onSubmit={(e) => {
+                                        e.preventDefault()
+                                        const email = (e.currentTarget.querySelector("input[type=email]") as HTMLInputElement | null)?.value ?? ""
+                                        const listaEmail = document.getElementById("lista-email") as HTMLInputElement | null
+                                        if (listaEmail) listaEmail.value = email
+                                        document.getElementById("lista")?.scrollIntoView({ behavior: "smooth" })
+                                    }}
+                                    className="mx-auto mt-8 flex w-full max-w-lg flex-col gap-3 sm:flex-row lg:mx-0">
+                                    <input
+                                        type="email"
+                                        required
+                                        placeholder="Seu melhor e-mail"
+                                        aria-label="E-mail"
+                                        className="h-12 flex-1 rounded-xl border border-white/25 bg-white px-4 text-zinc-900 outline-none placeholder:text-zinc-400 focus:border-[#4f8dff] focus:ring-4 focus:ring-[#4f8dff]/30"
+                                    />
+                                    <Button
+                                        type="submit"
+                                        size="lg"
+                                        className="h-12 rounded-xl bg-[#2563eb] px-7 text-base font-semibold text-white shadow-lg shadow-[#2563eb]/50 ring-1 ring-[#4f8dff]/40 hover:bg-[#1d4ed8]">
+                                        <span>Entrar na lista</span>
+                                    </Button>
+                                </form>
+
+                                <ul className="mt-5 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-white/70 lg:justify-start">
+                                    <li className="flex items-center gap-1.5">
+                                        <CircleCheck className="size-4 text-[#4f8dff]" />
+                                        Vagas limitadas
+                                    </li>
+                                    <li className="flex items-center gap-1.5">
+                                        <CreditCard className="size-4 text-[#4f8dff]" />
+                                        Sem cartão de crédito
+                                    </li>
+                                    <li className="flex items-center gap-1.5">
+                                        <CircleSlash className="size-4 text-[#4f8dff]" />
+                                        Cancele quando quiser
+                                    </li>
+                                </ul>
                             </div>
 
-                            <h1 className="text-balance text-4xl font-semibold md:text-5xl">Do controle de almoxarifado ao uso operacional no laboratório</h1>
-                            <p className="mx-auto my-8 max-w-2xl text-lg text-balance text-white/80">
-                                Cada gota conta. Acompanhe reagentes, insumos e equipamentos desde o recebimento até o consumo, movimentação ou descarte, com histórico rastreável e acesso 100% online.
-                            </p>
-
-                            <form
-                                onSubmit={(e) => {
-                                    e.preventDefault()
-                                    const email = (e.currentTarget.querySelector("input[type=email]") as HTMLInputElement | null)?.value ?? ""
-                                    const listaEmail = document.getElementById("lista-email") as HTMLInputElement | null
-                                    if (listaEmail) listaEmail.value = email
-                                    document.getElementById("lista")?.scrollIntoView({ behavior: "smooth" })
-                                }}
-                                className="mx-auto flex w-full max-w-md flex-col gap-3 sm:flex-row">
-                                <input
-                                    type="email"
-                                    required
-                                    placeholder="Seu melhor e-mail"
-                                    aria-label="E-mail"
-                                    className="h-11 flex-1 rounded-lg border border-white/25 bg-white/10 px-4 text-white outline-none placeholder:text-white/60 focus:border-white/60 focus:bg-white/15"
-                                />
-                                <Button
-                                    type="submit"
-                                    size="lg"
-                                    className="h-11 bg-white px-6 text-primary hover:bg-white/90">
-                                    <span>Entrar na lista</span>
-                                </Button>
-                            </form>
-                            <p className="mt-3 text-sm text-white/70">Vagas limitadas · Sem cartão de crédito · Cancele quando quiser</p>
-                        </div>
-                    </div>
-
-                    <div className="relative z-10 mx-auto max-w-5xl px-6">
-                        <div className="relative h-[19rem] overflow-hidden rounded-t-xl border border-b-0 border-white/15 shadow-2xl shadow-zinc-950/40 ring-1 ring-black/5 lg:h-[23rem]">
-                            <Image
-                                className="object-cover object-top"
-                                src={`${basePath}/screens/dashboard.jpg`}
-                                alt="Dashboard do ICO System com indicadores de eventos, inconsistências e custos"
-                                fill
-                                sizes="(max-width: 1024px) 100vw, 1024px"
-                                priority
-                                unoptimized
-                            />
+                            {/* Coluna do visual de produto */}
+                            <div className="hidden lg:block">
+                                <HeroProduct />
+                            </div>
                         </div>
                     </div>
                 </section>
 
-                <section className="relative z-10 bg-[#0a1a5c] pb-20 pt-14 text-white">
+                <section
+                    className="relative z-10 pb-20 pt-14 text-white"
+                    style={{ backgroundColor: NAVY }}>
                     <div className="mx-auto max-w-3xl px-6 text-center">
                         <h2 className="text-balance text-2xl font-semibold md:text-3xl">
                             Você não abriu um laboratório para caçar frasco perdido nem justificar desperdício.
@@ -135,24 +164,37 @@ export const HeroSection = () => {
     )
 }
 
+// Visual de produto da hero: imagem do frasco + fluxo de rastreabilidade.
+function HeroProduct() {
+    return (
+        <div className="relative mx-auto w-full max-w-[34rem]">
+            <Image
+                src={`${basePath}/screens/hero-frasco.png`}
+                alt="Frasco de reagente rastreado com fluxo de recebimento, uso, descarte e auditoria"
+                width={1132}
+                height={1414}
+                priority
+                unoptimized
+                className="h-auto w-full [mask-image:linear-gradient(to_right,transparent,black_12%)]"
+            />
+        </div>
+    )
+}
+
 export function HeroBackground() {
     return (
         <div
             aria-hidden
             className="absolute inset-0 -z-10 overflow-hidden">
-            {/* Base em degradê azul */}
-            <div className="absolute inset-0 bg-[linear-gradient(135deg,#0a1a5c_0%,#123fb5_50%,#1e63e6_100%)]" />
+            {/* Base azul-marinho chapada */}
+            <div className="absolute inset-0" style={{ backgroundColor: NAVY }} />
 
-            {/* Brilho diagonal que percorre a tela */}
-            <div className="absolute inset-0 bg-[length:200%_200%] bg-[linear-gradient(120deg,transparent_0%,rgba(125,181,255,0.35)_25%,transparent_45%,rgba(139,150,255,0.35)_70%,transparent_100%)] opacity-70 mix-blend-screen animate-[ico-pan_8s_ease-in-out_infinite] motion-reduce:animate-none" />
+            {/* Leve profundidade atrás do produto (sem animação, mantém o fundo chapado) */}
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_72%_35%,rgba(37,99,235,0.28),transparent_58%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_0%_100%,rgba(30,58,138,0.35),transparent_55%)]" />
 
-            {/* Auroras que flutuam (as "ondas" do mesh) */}
-            <div className="absolute -left-[15%] -top-[20%] size-[42rem] rounded-full bg-[radial-gradient(circle,rgba(56,189,248,0.6),transparent_60%)] blur-3xl mix-blend-screen animate-[ico-blob1_9s_ease-in-out_infinite] motion-reduce:animate-none" />
-            <div className="absolute -right-[15%] top-[5%] size-[38rem] rounded-full bg-[radial-gradient(circle,rgba(129,140,248,0.55),transparent_60%)] blur-3xl mix-blend-screen animate-[ico-blob2_11s_ease-in-out_infinite] motion-reduce:animate-none" />
-            <div className="absolute left-[25%] -bottom-[25%] size-[44rem] rounded-full bg-[radial-gradient(circle,rgba(59,130,246,0.55),transparent_60%)] blur-3xl mix-blend-screen animate-[ico-blob3_13s_ease-in-out_infinite] motion-reduce:animate-none" />
-
-            {/* Textura de tecido/malha */}
-            <svg className="absolute inset-0 size-full opacity-[0.12] mix-blend-overlay">
+            {/* Textura sutil */}
+            <svg className="absolute inset-0 size-full opacity-[0.08] mix-blend-overlay">
                 <filter id="ico-noise">
                     <feTurbulence
                         type="fractalNoise"
