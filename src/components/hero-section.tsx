@@ -21,11 +21,20 @@ export const HeroSection = () => {
                                 <Logo />
                             </a>
 
-                            <Button
-                                size="sm"
-                                onClick={() => document.getElementById("lista")?.scrollIntoView({ behavior: "smooth" })}>
-                                <span>Entrar na lista</span>
-                            </Button>
+                            <div className="flex items-center gap-2 sm:gap-3">
+                                <Button
+                                    variant="outline"
+                                    size="sm"
+                                    className="hidden sm:inline-flex"
+                                    onClick={() => document.getElementById("apresentacao")?.scrollIntoView({ behavior: "smooth" })}>
+                                    <span>Agendar demonstração</span>
+                                </Button>
+                                <Button
+                                    size="sm"
+                                    onClick={() => document.getElementById("lista")?.scrollIntoView({ behavior: "smooth" })}>
+                                    <span>Entrar na lista</span>
+                                </Button>
+                            </div>
                         </div>
                     </div>
                 </nav>
@@ -41,9 +50,9 @@ export const HeroSection = () => {
                                 Lista de espera aberta · 70% de desconto de lançamento
                             </div>
 
-                            <h1 className="text-balance text-4xl font-semibold md:text-5xl lg:text-6xl">Cada gota conta. Nenhuma se perde.</h1>
+                            <h1 className="text-balance text-4xl font-semibold md:text-5xl">Do controle de almoxarifado ao uso operacional no laboratório</h1>
                             <p className="mx-auto my-8 max-w-2xl text-lg text-balance text-white/80">
-                                Rastreie cada reagente, insumo e equipamento em um histórico que ninguém pode alterar. 100% online, sem nada para instalar.
+                                Cada gota conta. Acompanhe reagentes, insumos e equipamentos desde o recebimento até o consumo, movimentação ou descarte, com histórico rastreável e acesso 100% online.
                             </p>
 
                             <form
