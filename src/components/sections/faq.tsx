@@ -3,7 +3,7 @@ import { Plus } from "lucide-react"
 const perguntas = [
     {
         q: "Minha equipe não vai querer preencher mais um sistema.",
-        a: "O registro acontece no fluxo que já existe: escanear o QR Code ao pegar e ao devolver. São segundos, direto do celular. Mais rápido que anotar num caderno.",
+        a: "O registro acontece no fluxo que já existe: escaneamento rápido (Check-in/Check-out) de QR Codes. O processo leva segundos e é compatível com o que for mais prático para a sua operação: pode ser feito diretamente pelo smartphone, tablet ou leitores integrados. Sem burocracia, sem perda de tempo e sem barreiras de hardware.",
     },
     {
         q: "Já tenho planilha pra isso.",
