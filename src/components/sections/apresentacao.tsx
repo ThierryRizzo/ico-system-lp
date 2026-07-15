@@ -2,6 +2,7 @@ import { CalendarCheck } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
+import { SectionAura } from "@/components/section-aura"
 
 const EMAIL = "contato@pathoscan.com.br"
 
@@ -9,8 +10,9 @@ export function Apresentacao() {
     return (
         <section
             id="apresentacao"
-            className="border-t">
-            <div className="mx-auto max-w-2xl px-6 py-24">
+            className="relative overflow-hidden border-t">
+            <SectionAura />
+            <div className="relative z-10 mx-auto max-w-2xl px-6 py-24">
                 <div className="rounded-3xl border bg-card p-8 text-center shadow-sm sm:p-12">
                     <div className="bg-primary/10 text-primary mx-auto flex size-12 items-center justify-center rounded-2xl">
                         <CalendarCheck className="size-6" />

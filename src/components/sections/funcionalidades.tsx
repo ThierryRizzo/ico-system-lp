@@ -5,6 +5,7 @@ import Image from "next/image"
 
 import { cn } from "@/lib/utils"
 import { basePath } from "@/lib/base-path"
+import { Button } from "@/components/ui/button"
 import { SectionAura } from "@/components/section-aura"
 
 const tabs = [
@@ -113,6 +114,15 @@ export function Funcionalidades() {
                             <h3 className="text-primary text-2xl font-semibold text-balance">{current.title}</h3>
                             <p className="text-muted-foreground mt-4 leading-relaxed">{current.text}</p>
                         </div>
+
+                        <Button
+                            size="lg"
+                            className="mt-8"
+                            onClick={() =>
+                                document.getElementById("apresentacao")?.scrollIntoView({ behavior: "smooth" })
+                            }>
+                            <span>Agende uma demonstração</span>
+                        </Button>
                     </div>
 
                     <div
