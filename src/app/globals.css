@@ -146,7 +146,7 @@
     transform: translate(0, 0) scale(1);
   }
   50% {
-    transform: translate(12%, 10%) scale(1.2);
+    transform: translate(24%, 20%) scale(1.35);
   }
 }
 
@@ -156,7 +156,7 @@
     transform: translate(0, 0) scale(1);
   }
   50% {
-    transform: translate(-14%, 8%) scale(1.15);
+    transform: translate(-26%, 16%) scale(1.28);
   }
 }
 
@@ -166,7 +166,7 @@
     transform: translate(0, 0) scale(1);
   }
   50% {
-    transform: translate(10%, -12%) scale(1.1);
+    transform: translate(20%, -24%) scale(1.22);
   }
 }
 

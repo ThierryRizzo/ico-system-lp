@@ -144,12 +144,12 @@ export function HeroBackground() {
             <div className="absolute inset-0 bg-[linear-gradient(135deg,#0a1a5c_0%,#123fb5_50%,#1e63e6_100%)]" />
 
             {/* Brilho diagonal que percorre a tela */}
-            <div className="absolute inset-0 bg-[length:200%_200%] bg-[linear-gradient(120deg,transparent_0%,rgba(125,181,255,0.35)_25%,transparent_45%,rgba(139,150,255,0.35)_70%,transparent_100%)] opacity-70 mix-blend-screen animate-[ico-pan_10s_ease-in-out_infinite] motion-reduce:animate-none" />
+            <div className="absolute inset-0 bg-[length:200%_200%] bg-[linear-gradient(120deg,transparent_0%,rgba(125,181,255,0.35)_25%,transparent_45%,rgba(139,150,255,0.35)_70%,transparent_100%)] opacity-70 mix-blend-screen animate-[ico-pan_8s_ease-in-out_infinite] motion-reduce:animate-none" />
 
             {/* Auroras que flutuam (as "ondas" do mesh) */}
-            <div className="absolute -left-[15%] -top-[20%] size-[42rem] rounded-full bg-[radial-gradient(circle,rgba(56,189,248,0.6),transparent_60%)] blur-3xl mix-blend-screen animate-[ico-blob1_12s_ease-in-out_infinite] motion-reduce:animate-none" />
-            <div className="absolute -right-[15%] top-[5%] size-[38rem] rounded-full bg-[radial-gradient(circle,rgba(129,140,248,0.55),transparent_60%)] blur-3xl mix-blend-screen animate-[ico-blob2_15s_ease-in-out_infinite] motion-reduce:animate-none" />
-            <div className="absolute left-[25%] -bottom-[25%] size-[44rem] rounded-full bg-[radial-gradient(circle,rgba(59,130,246,0.55),transparent_60%)] blur-3xl mix-blend-screen animate-[ico-blob3_18s_ease-in-out_infinite] motion-reduce:animate-none" />
+            <div className="absolute -left-[15%] -top-[20%] size-[42rem] rounded-full bg-[radial-gradient(circle,rgba(56,189,248,0.6),transparent_60%)] blur-3xl mix-blend-screen animate-[ico-blob1_9s_ease-in-out_infinite] motion-reduce:animate-none" />
+            <div className="absolute -right-[15%] top-[5%] size-[38rem] rounded-full bg-[radial-gradient(circle,rgba(129,140,248,0.55),transparent_60%)] blur-3xl mix-blend-screen animate-[ico-blob2_11s_ease-in-out_infinite] motion-reduce:animate-none" />
+            <div className="absolute left-[25%] -bottom-[25%] size-[44rem] rounded-full bg-[radial-gradient(circle,rgba(59,130,246,0.55),transparent_60%)] blur-3xl mix-blend-screen animate-[ico-blob3_13s_ease-in-out_infinite] motion-reduce:animate-none" />
 
             {/* Textura de tecido/malha */}
             <svg className="absolute inset-0 size-full opacity-[0.12] mix-blend-overlay">
