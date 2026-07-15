@@ -16,14 +16,14 @@ export function Autor() {
                 </div>
 
                 <div className="mt-12 flex flex-col items-center gap-6 rounded-3xl border bg-card p-8 text-center shadow-sm sm:flex-row sm:items-start sm:gap-8 sm:p-10 sm:text-left">
-                    <div className="ring-primary/10 relative size-28 shrink-0 overflow-hidden rounded-full ring-4">
+                    <div className="relative aspect-[4/5] w-44 shrink-0 overflow-hidden rounded-2xl ring-1 ring-black/5 sm:w-56">
                         <Image
                             src={`${basePath}/eber.jpg`}
                             alt="Dr. Éber Emanuel Mayoral"
                             fill
                             unoptimized
-                            sizes="112px"
-                            className="object-cover object-[center_22%]"
+                            sizes="(max-width: 640px) 176px, 224px"
+                            className="object-cover object-top"
                         />
                     </div>
                     <div>
