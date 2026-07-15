@@ -34,14 +34,11 @@ export function Autor() {
                         <p className="text-muted-foreground mt-3 leading-relaxed">
                             Idealizador do ICO System. Atua há mais de uma década em anatomia patológica, coordenando processos de imuno-histoquímica e desenvolvendo soluções para rastreabilidade, qualidade e gestão operacional em laboratórios de alta complexidade.
                         </p>
+                        <span className="border-primary/20 bg-primary/5 text-primary mt-5 inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium text-balance">
+                            <BadgeCheck className="size-4 shrink-0" />
+                            Projeto aprovado na Fase 1 do Programa Centelha SP
+                        </span>
                     </div>
-                </div>
-
-                <div className="mt-6 flex justify-center">
-                    <span className="border-primary/20 bg-primary/5 text-primary inline-flex items-center gap-2 rounded-full border px-4 py-2 text-center text-sm font-medium text-balance">
-                        <BadgeCheck className="size-4 shrink-0" />
-                        Projeto aprovado na Fase 1 do Programa Centelha SP
-                    </span>
                 </div>
             </div>
         </section>
