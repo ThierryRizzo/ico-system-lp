@@ -56,10 +56,22 @@ export const HeroSection = () => {
                     className="relative isolate overflow-hidden text-white"
                     style={{ backgroundColor: NAVY }}>
                     <HeroBackground />
+
+                    {/* Imagem do produto: colada no canto superior direito, altura toda da hero */}
+                    <div className="pointer-events-none absolute inset-y-0 right-0 z-0 hidden w-1/2 lg:block">
+                        <Image
+                            src={`${basePath}/screens/hero-frasco.png`}
+                            alt="Frasco de reagente rastreado com fluxo de recebimento, uso, descarte e auditoria"
+                            fill
+                            sizes="50vw"
+                            priority
+                            unoptimized
+                            className="object-cover object-center [mask-image:linear-gradient(to_right,transparent,black_30%)]"
+                        />
+                    </div>
+
                     <div className="relative z-10 mx-auto max-w-6xl px-6 pt-14 pb-16 lg:pt-20 lg:pb-24">
-                        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-10">
-                            {/* Coluna de texto */}
-                            <div className="max-w-xl text-center lg:text-left">
+                        <div className="max-w-xl text-center lg:text-left">
                                 <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-sm font-medium backdrop-blur">
                                     <Sparkles className="size-4 text-blue-300" />
                                     Lista de espera aberta · 70% de desconto de lançamento
@@ -114,12 +126,6 @@ export const HeroSection = () => {
                                         Cancele quando quiser
                                     </li>
                                 </ul>
-                            </div>
-
-                            {/* Coluna do visual de produto */}
-                            <div className="hidden lg:block">
-                                <HeroProduct />
-                            </div>
                         </div>
                     </div>
                 </section>
@@ -160,23 +166,6 @@ export const HeroSection = () => {
                     </div>
                 </section>
             </main>
-        </div>
-    )
-}
-
-// Visual de produto da hero: imagem do frasco + fluxo de rastreabilidade.
-function HeroProduct() {
-    return (
-        <div className="relative mx-auto w-full max-w-[34rem]">
-            <Image
-                src={`${basePath}/screens/hero-frasco.png`}
-                alt="Frasco de reagente rastreado com fluxo de recebimento, uso, descarte e auditoria"
-                width={1132}
-                height={1414}
-                priority
-                unoptimized
-                className="h-auto w-full [mask-image:linear-gradient(to_right,transparent,black_12%)]"
-            />
         </div>
     )
 }
